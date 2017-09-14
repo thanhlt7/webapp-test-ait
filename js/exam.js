@@ -37,7 +37,6 @@ document.getElementsByClassName("contents")[0].addEventListener("click", functio
         lst[i].classList.remove("active");
     }
 	if(e.target && e.target.nodeName == "LI") {
-        this.classList.remove("active");
         e.target.classList = "active";
     }
     if(e.target && e.target.nodeName == "SPAN"){
@@ -46,6 +45,8 @@ document.getElementsByClassName("contents")[0].addEventListener("click", functio
     if(e.target && e.target.nodeName == "IMG"){
         e.target.parentNode.parentNode.classList = "active";
     }
+
+    document.getElementsByName("apps")[0].value = e.target.innerText;
 });
 
 document.getElementsByName("apps")[0].addEventListener("keydown", function(e){
