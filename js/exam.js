@@ -24,9 +24,10 @@ function findApps(){
 }
 
 document.getElementsByName("apps")[0].onfocus = function(){
-    generateAppsTable(TABLE_DATA);
+    var input = document.getElementsByName("apps")[0].value.trim();
+    var result = searchApps(input);
+    generateAppsTable(result);
     document.getElementsByClassName("contents")[0].style.display = "block";
-    stickContents();
 }
 
 // Get the element, add a click listener...
